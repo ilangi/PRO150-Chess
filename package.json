@@ -1,0 +1,25 @@
+{
+  "name": "pro150-chess-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilangi/PRO150-Chess.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilangi/PRO150-Chess/issues"
+  },
+  "homepage": "https://github.com/ilangi/PRO150-Chess#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mongodb": "^4.4.0",
+    "pug": "^3.0.2"
+  }
+}
