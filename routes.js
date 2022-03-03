@@ -4,10 +4,10 @@ const { fileURLToPath } = require("url");
 const expressSession = require('express-session');
 const { Console } = require("console");
 
-const url = '';
+const url = 'mongodb+srv://PRO150Chess:PRO150Chess@cluster0.fbh1a.mongodb.net/test?authSource=admin&replicaSet=atlas-4h3p52-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true';
 const client = new MongoClient(url);
 
-const dbName = 'myData';
+const dbName = 'UserList';
 const db = client.db(dbName);
 const collection = db.collection('Users');
 
@@ -39,7 +39,6 @@ exports.index = async (req, res) => {
     const filteredDocs = await collection.findOne({_id: ObjectId(req.params.id)});
     client.close();
 
-
     res.render('index', {
         title: 'Welcome',
         users: filteredDocs,
@@ -60,13 +59,13 @@ exports.loginUser = async (req,res) => {
     await client.connect();
     const filteredDocs = await collection.findOne({username: req.body.username})
     client.close();
-    
+
     if (req.body.password == filteredDocs.password){
         req.session.user = { 
             isAuthenticated: true,
             username: req.body.username
         }
-
+        
         res.redirect(`/index/${filteredDocs._id}`);
     }else {
         res.redirect('/login');
@@ -108,4 +107,14 @@ exports.editPerson = async (req,res) => {
     }
     client.close();
     res.redirect(`/index/${req.params.id}`);
+};
+
+// Delete method
+exports.delete = async (req, res) => {
+    await client.connect();
+    const deleteResult = await collection.deleteOne({_id: ObjectId(req.params.id)});
+    client.close();
+
+    res.redirect(`/login`);
+
 };
