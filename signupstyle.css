@@ -1,0 +1,79 @@
+body {
+    text-align: center;
+    background: #F7BB97;
+    font-family: "Montserrat";
+    /* background: #eeb; */
+    /* background-image: linear-gradient(to right,#DD5E89 0%,  #F7BB97 51%, #DD5E89 100% ); */
+}
+
+form {
+    left: 50%; 
+    background-color: #fff;
+    padding: 40px;
+    display: inline-block;
+    margin: auto;
+    height: 650px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+h3 {
+    font-size: 25px;
+    font-family: "Montserrat";
+    margin: auto auto 10px auto;
+}
+
+input[ name='username'],input[name='password'],input[name='email'], input[name='age'] {
+    outline: none;
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    font-family: "Montserrat";
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    margin: 20px 0px 20px 0px;
+    width: 500px;
+}
+
+form label {
+    margin: auto auto auto -280px
+}
+
+select {
+    display: block;
+    width: 300px;
+    outline: none;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    font-family: "Montserrat";
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 10px;
+    margin: 0px 0px 0px 0px;
+    width: 500px;
+    height: 40px;
+    cursor: pointer;
+}
+
+input[name='submitBtn']{
+    /* background-image: linear-gradient(to right, #2BC0E4 0%, #EAECC6 51%, #2BC0E4 100%); */
+    background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%);
+    width: 300px;
+    background-size: 200% auto;
+    border-radius: 10px;
+    padding: 15px;
+    border: none;
+    margin: 10px 0px 0px 0px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: #fff;
+}
+
+input[name='submitBtn']:hover {
+    background-position: right center;
+    cursor: pointer;
+}
+
