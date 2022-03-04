@@ -1,0 +1,21 @@
+extends layout 
+
+block content
+    table(class = 'gridtable')
+        tr
+            th Name
+            th Age
+            th Email
+            th
+            tr
+                td #{users.username}
+                td #{users.age}
+                td #{users.email} 
+                td 
+                    a(href='/edit/' + users._id) Edit info
+
+        br
+        br
+        a(href="/logout")
+            button(type="button") Log Out
+    

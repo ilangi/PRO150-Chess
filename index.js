@@ -10,8 +10,8 @@ app.set('view engine', 'pug');
 app.set('views', __dirname + '\\views');
 app.use(express.static(path.join(__dirname, '/views')));
 
-
 app.use(expressSession({
+    secret: "secret",
     saveUninitialized: true,
     resave: true
 }));
@@ -21,6 +21,8 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
+
+app.use(express.json());
 
 const urlencodedParser = express.urlencoded({
     extended: false
@@ -38,7 +40,8 @@ const checkAuth = (req, res, next) => {
 app.get('/create', routes.create);
 app.post('/create', urlencodedParser, routes.createUser);
 app.get('/index/:id',checkAuth, routes.index);
-app.get('/login',routes.login);
+app.get('/play', routes.play);
+app.get('/login', routes.login);
 app.post('/login', urlencodedParser, routes.loginUser)
 app.get('/logout', routes.logout); 
 app.get('/edit/:id', routes.edit);
