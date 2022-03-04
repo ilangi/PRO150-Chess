@@ -2,14 +2,11 @@ head
   title Play Chess
   meta(charset='UTF-8')
   link(rel='stylesheet', href='/playchessstyle.css')
-  script(src='chess.js')
-
-a(href="/logout")
-  button(type="button") Log Out
+  include /chess.js;
 
 h1 Chess
 
-canvas#chessCanvas(width='500' height='500')
+canvas#chessCanvas(width='400' height='400')
 
 #gold
   h2 Gold pieces lost:
@@ -22,3 +19,5 @@ canvas#chessCanvas(width='500' height='500')
 #gameStats
   h6#currentTeamText
   h7#totalVictories
+  a(href="/logout")
+   button(type="button") Log Out
