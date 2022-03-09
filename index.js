@@ -48,4 +48,4 @@ app.get('/edit/:id', routes.edit);
 app.post('/edit/:id', urlencodedParser, routes.editPerson);
 app.get('/delete/:id', routes.delete);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
