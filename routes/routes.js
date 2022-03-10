@@ -42,15 +42,20 @@ exports.index = async (req, res) => {
     client.close();
 
     res.render('index', {
-        title: 'Welcome',
+        title: 'Account Information',
         users: filteredDocs,
     });
 };
 
 //Loads chess play page
-exports.play = (req, res) => {
+exports.play = async (req, res) => {
+    await client.connect();
+    const filteredDocs = await collection.findOne({_id: ObjectId(req.params.id)});
+    client.close();
+
     res.render('playchess', {
-        title: 'Play Chess'
+        title: 'Play Chess',
+        users: filteredDocs,
     })
 }
 
@@ -74,7 +79,7 @@ exports.loginUser = async (req,res) => {
             username: req.body.username
         }
         
-        res.redirect(`/index/${filteredDocs._id}`);
+        res.redirect(`/chess/${filteredDocs._id}`);
     }else {
         res.redirect('/login');
     }
