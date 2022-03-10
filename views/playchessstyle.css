@@ -3,13 +3,19 @@
     margin:0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 100;
-    color: burlywood;
-    background-color: #000;
+    font-family: verdana, arial, sans-serif;
+    font-size: 12px;
+
+    background-color: #F7BB97;
+    /* background-color: #eeb; */
+    /* background-color: #fff; */
+    color: #fff;
 }
 
 h1{
     text-align:center;
     background-color: transparent;
+    font-size: 20px;
 }
 
 h2{
@@ -29,6 +35,7 @@ h3{
     top: 2vw;
     font-size: large;
     vertical-align: middle;
+    color: #cba135;
 }
 
 h4{
@@ -39,8 +46,9 @@ h4{
     left: 11vw;
     top: 2vw;
 }
-
+/* Silver Casulaties*/
 h5{
+    color: #808080;
     background-color: transparent;
     text-align:right;
     position: relative;
@@ -53,7 +61,7 @@ h5{
 h6{
     text-align: center;
     font-size: x-large;
-    background-color:slategray;
+    background-color:#AFD3FF;
     height: 30;
     width: 200;
     left: 42.5vw;
@@ -74,8 +82,8 @@ h7{
     top: 0;
     left: 12vw;
     height: auto;
-    width: 20vw;
     position: absolute;
+    
 }
 
  #silver{
@@ -87,16 +95,37 @@ h7{
 }
 
  #gameStats{
-    background-color: rgb(0, 0, 0);
     height: auto;
     width: 15%;
 }
 
 #chessCanvas{
     border: 0.1vw solid;
-    border-color: aquamarine;
+    border-color: #97D3F7;
     margin: 1vw;
     background-color: transparent;
     position: relative;
     left: 32.58vw;
+}   
+
+button {
+    /* background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%); */
+    background-image: linear-gradient(to right,  #97D3F7 18%, #e7808e 78%);
+    width: 150px;
+    background-size: 200% auto;
+    border-radius: 10px;
+    padding: 15px;
+    border: none;
+    margin: 10px 50px 0px 60px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: #fff;
+    border-color: #F7BB97;
+    border-width: 10px;
+    
+}
+
+button:hover {
+    background-position: right center;
+    cursor: pointer;
 }
