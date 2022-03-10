@@ -40,12 +40,13 @@ const checkAuth = (req, res, next) => {
 app.get('/create', routes.create);
 app.post('/create', urlencodedParser, routes.createUser);
 app.get('/index/:id',checkAuth, routes.index);
-app.get('/play', routes.play);
 app.get('/login', routes.login);
 app.post('/login', urlencodedParser, routes.loginUser)
 app.get('/logout', routes.logout); 
 app.get('/edit/:id', routes.edit);
 app.post('/edit/:id', urlencodedParser, routes.editPerson);
 app.get('/delete/:id', routes.delete);
+app.get('/chess/:id', routes.play);
+
 
 app.listen(process.env.PORT || 3000);
