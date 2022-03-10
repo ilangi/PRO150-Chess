@@ -2,20 +2,25 @@ extends layout
 
 block content
     table(class = 'gridtable')
-        tr
-            th Name
-            th Age
-            th Email
-            th
-            tr
-                td #{users.username}
-                td #{users.age}
-                td #{users.email} 
-                td 
-                    a(href='/edit/' + users._id) Edit info
+        br
+        th                     
+                a(href='/edit/' + users._id) Edit info
+        th 
+                a(href='/delete/' + users._id) Delete Account
 
-        br
-        br
-        a(href="/logout")
+        tr
+            th Username
+                td #{users.username}
+            
+        tr
+            th Age
+                td #{users.age}
+        tr
+            th Email
+                td #{users.email}
+            
+    a(href="/chess/" + users._id)
+        button(type=button) Play Chess
+    a(href="/logout")
             button(type="button") Log Out
     
