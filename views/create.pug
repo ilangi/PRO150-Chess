@@ -1,0 +1,30 @@
+//- extends layout 
+html    
+    head
+        title=title
+        link(href='/signupstyle.css' rel='stylesheet')
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet")
+body
+    h3=title
+    block content 
+    form(id='form' method='post' action='/create')
+        h3 Signup
+        //- username
+        //- label(for='username') Username: 
+        input(type='text' name='username' placeholder='Username')
+        br
+        //- email
+        //- label(for='email') Email: 
+        input(type='text' name='email' placeholder='Email')
+        br
+        //- age
+        //- label(for='age') Age: 
+        input(type='text' name='age' placeholder='Age')
+        br 
+        //- password
+        //- label(for='password') Password: 
+        input(type='text' name='password' placeholder='Password')
+        br
+        input(type='submit' value='Sign Up' name='submitBtn')
