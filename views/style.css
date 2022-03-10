@@ -1,43 +1,66 @@
 body {
     font-family: verdana, arial, sans-serif;
     font-size: 12px;
-    width: 80%;
+    /* width: 100%; */
     padding: 20px;
-    background-color: burlywood;
-    text-align: center;
+    background-color: #F7BB97;
+    /* background-color: #eeb; */
+    /* background-color: #fff; */
+    text-align: left;
+    margin: auto 450px;
+    color: #fff;
 }
 
 table.gridtable {
-    color: #337;
+    color: #000;
     border-width: 1px;
     border-color: #559;
     border-collapse: collapse;
     display: inline-block;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 20px;
+    table-layout: auto;
+    width: 100%;
+    padding-left: 12%;
 }
 
 table.gridtable th {
     border-width: 1px;
-    padding: 8px;
+    padding: 20px;
     border-style: solid;
-    border-color: #000;
-    background-color: #ccf;
+    border-color: #F7BB97;
+    /* background-color: #ccf; */
+    background-color: #97D3F7;
+    /* background-color: #f7bb97; */
+
 }
 
 table.gridtable td {
     border-width: 1px;
     padding: 8px;
     border-style: solid;
-    border-color: #559;
+    border-color: #F7BB97;
     background-color: #fff;
 }
 
-form {
-    left: 50%; 
-    background-color: #fff;
-    padding: 100px;
-    display: inline-block;
-    margin: 80px auto auto auto;
-    height: 300px;
-    width: 300px;
-    border-radius: 20px;
+button {
+    /* background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%); */
+    background-image: linear-gradient(to right,  #97D3F7 18%, #e7808e 78%);
+    width: 150px;
+    background-size: 200% auto;
+    border-radius: 10px;
+    padding: 15px;
+    border: none;
+    margin: 10px 50px 0px 60px;
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: #fff;
+    border-color: #F7BB97;
+    border-width: 10px;
+}
+
+button:hover {
+    background-position: right center;
+    cursor: pointer;
 }
