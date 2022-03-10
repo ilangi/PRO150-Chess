@@ -1,13 +1,12 @@
+block content 
+
 head
   title Play Chess
   meta(charset='UTF-8')
   link(rel='stylesheet', href='/playchessstyle.css')
-  script(src='chess.js')
+  script(src="/chess.js")
 
-a(href="/logout")
-  button(type="button") Log Out
-
-h1 Chess
+h1 Welcome to Chess, #{users.username}
 
 canvas#chessCanvas(width='500' height='500')
 
@@ -19,6 +18,13 @@ canvas#chessCanvas(width='500' height='500')
   h4 Silver pieces lost:
   h5#SILVERCasualities
 
-#gameStats
-  h6#currentTeamText
-  h7#totalVictories
+body(class="goldd")
+    #gameStats
+        h6#currentTeamText
+        h7#totalVictories
+
+        a(href='/index/' + users._id)
+            button(type="button") View Profile
+        a(href="/logout")
+            button(type="button") Log Out
+        button(type="button" onclick="history.go(0)") Reset
