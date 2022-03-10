@@ -150,8 +150,11 @@ function checkPossiblePlaysPawn(curX, curY) {
     checkPossibleMove(curX, curY+direction);
 
     // First double move
-    if (curY === 1 || curY === 6) {
-        checkPossibleMove(curX, curY+2*direction);
+    if(checkPossibleMove(curX, curY+direction)){
+        if (curY === 1 || curY === 6) {
+            onPassant = true;
+            checkPossibleMove(curX, curY+2*direction);
+        }
     }
 
     // Check diagonal left capture
@@ -268,11 +271,15 @@ function checkPossiblePlay(x, y) {
 }
 
 function checkPossibleMove(x, y) {
+    try {
     if (board.tiles[y][x].team !== EMPTY) return false;
-
     board.validMoves[y][x] = VALID;
     drawCircle(x, y, HIGHLIGHT_COLOR);
     return true;
+    } catch (error) {
+        console.log(`X: ${x} Y: ${y}`);
+        return false;
+    }
 }
 
 function checkPossibleCapture(x, y) {
@@ -307,10 +314,10 @@ function moveSelectedPiece(x, y) {
 
 function changeCurrentTeam() {
     if (currentTeam === GOLD) {
-        currentTeamText.textContent = "Gold's turn";
+        currentTeamText.textContent = "Silver's turn";
         currentTeam = SILVER;
     } else {
-        currentTeamText.textContent = "Silver's turn";
+        currentTeamText.textContent = "Gold's turn";
         currentTeam = GOLD;
     }
 }
